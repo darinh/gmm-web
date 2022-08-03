@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = (props) => {
-  const providers = ['twitter', 'github', 'aad'];
   const redirect = window.location.pathname;
   const [userInfo, setUserInfo] = useState();
 
@@ -41,12 +40,7 @@ const NavBar = (props) => {
       <nav className="menu auth">
         <p className="menu-label">Auth</p>
         <div className="menu-list auth">
-          {!userInfo &&
-            providers.map((provider) => (
-              <a key={provider} href={`/.auth/login/${provider}?post_login_redirect_uri=${redirect}`}>
-                {provider}
-              </a>
-            ))}
+          {!userInfo && <a href={`/.auth/login/aad?post_login_redirect_uri=${redirect}`}>Login</a>}
           {userInfo && <a href={`/.auth/logout?post_logout_redirect_uri=${redirect}`}>Logout</a>}
         </div>
       </nav>
@@ -55,7 +49,6 @@ const NavBar = (props) => {
           <div className="user">
             <p>Welcome</p>
             <p>{userInfo && userInfo.userDetails}</p>
-            <p>{userInfo && userInfo.identityProvider}</p>
           </div>
         </div>
       )}
