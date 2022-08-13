@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider } from '@fluentui/react';
-import { CoherenceCustomizations } from '@coherence-design-system/styles';
+import { loadTheme, ThemeProvider } from '@fluentui/react';
+import { CoherenceCustomizations, CoherenceTheme } from '@coherence-design-system/styles';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 
-import App from './App';
+import { App } from './App';
 import './index.css';
 import app, { groupSaga } from './store';
 
@@ -20,6 +20,8 @@ const store = configureStore({
 });
 
 sagaMiddleware.run(groupSaga);
+
+loadTheme(CoherenceTheme);
 
 ReactDOM.render(
   <ThemeProvider {...CoherenceCustomizations}>

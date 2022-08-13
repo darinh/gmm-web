@@ -60,6 +60,7 @@ The apps written in the following JavaScript frameworks/libraries:
 - Learn about the Azure Functions [local.settings.json](https://docs.microsoft.com/azure/azure-functions/functions-run-local#local-settings-file?wt.mc_id=javascript-12560-yolasors) file
 - Learn how to [Deploy to Azure Using Azure Functions](https://code.visualstudio.com/tutorials/functions-extension/getting-started?wt.mc_id=javascript-12560-yolasors)
 - Sign up for a [Free Trial of Azure](https://azure.microsoft.com/free/?wt.mc_id=javascript-12560-yolasors)
+- func start
 
 ### Visual Studio Code
 
