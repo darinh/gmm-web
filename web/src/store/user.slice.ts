@@ -1,20 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { User } from '../models/User';
 import type { RootState } from './store';
-
-export type UserRole = 'anonymous' | 'authenticated';
-
-export type UserData = {
-  clientPrincipal: {
-    identityProvider: string;
-    userId: string;
-    userDetails: string;
-    userRoles: UserRole[];
-  }
-}
 
 // Define a type for the slice state
 type UserState = {
-  currentUser?: UserData
+  currentUser?: User;
 }
 
 // Define the initial state using that type
@@ -26,8 +16,8 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setUser: (state, action: PayloadAction<UserData>) => {
-      state.currentUser = action.payload;
+    setUser: (state, action: PayloadAction<User>) => {
+      state.currentUser = action.payload
     }
   }
 });
