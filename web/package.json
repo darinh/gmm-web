@@ -17,12 +17,9 @@
     ]
   },
   "dependencies": {
-    "@coherence-design-system/controls": "^4.4.0",
-    "@coherence-design-system/styles": "^4.0.1",
     "@fluentui/react": "^8.87.1",
     "@reduxjs/toolkit": "^1.8.3",
     "axios": "^0.27.2",
-    "dayjs": "^1.11.4",
     "prompts": "^2.4.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
