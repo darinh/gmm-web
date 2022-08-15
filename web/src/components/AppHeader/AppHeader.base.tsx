@@ -60,8 +60,8 @@ export const AppHeaderBase: React.FunctionComponent<IAppHeaderProps> = (props: I
   const buttonStyles = getButtonStyles();
   const commandBarItems: ICommandBarItemProps[] = [
     !currentUser
-    ? { buttonStyles, key:'loginLink', href: `/.auth/login?post_login_redirect_uri=${redirect}`, text: 'Login' }
-    : { buttonStyles, key:'logoutLink', href: `/.auth/logout?post_logout_redirect_uri=${redirect}`, text: 'Logout' }
+    ? { buttonStyles, key:'loginLink', href: `/.auth/login/aad?post_login_redirect_uri=${redirect}`, text: 'Login' }
+    : { buttonStyles, key:'logoutLink', href: `/.auth/logout/aad?post_logout_redirect_uri=${redirect}`, text: 'Logout' }
   ];
 
   return (
