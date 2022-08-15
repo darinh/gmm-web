@@ -1,9 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from './store';
 
+export type UserRole = 'anonymous' | 'authenticated';
+
 export type UserData = {
   clientPrincipal: {
+    identityProvider: string;
+    userId: string;
     userDetails: string;
+    userRoles: UserRole[];
   }
 }
 
