@@ -1,8 +1,14 @@
 import React from 'react';
-import { IStyle, IStyleFunctionOrObject, ITheme } from '@fluentui/react';
+import { ICommandBarStyles, ILinkStyles, IStyle, IStyleFunctionOrObject, ITheme } from '@fluentui/react';
 
 export interface IAppHeaderStyles {
   root: IStyle;
+  titleContainer: IStyle;
+  headerItemsContainer: IStyle;
+  subComponentStyles: {
+    titleLinkStyles: ILinkStyles;
+    commandBarStyles: ICommandBarStyles;
+  }
 }
 
 export interface IAppHeaderStyleProps {

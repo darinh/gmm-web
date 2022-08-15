@@ -2,7 +2,7 @@ import { getGlobalClassNames } from '@fluentui/react';
 import { IAppStyleProps, IAppStyles } from './App.types';
 
 const GlobalClassNames = {
-  root: 'gmm-app',
+  root: 'gmm-app'
 };
 
 export const getStyles = (props: IAppStyleProps): IAppStyles => {
@@ -11,10 +11,8 @@ export const getStyles = (props: IAppStyleProps): IAppStyles => {
   const classNames = getGlobalClassNames(GlobalClassNames, theme);
 
   return {
-    root: [
-      { },
-      classNames.root,
-      className
-    ]
+    root: [{
+
+    }, classNames.root, className]
   };
 };

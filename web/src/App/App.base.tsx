@@ -1,5 +1,4 @@
 import React from 'react';
-import { CoherenceNav, ICoherenceNavProps } from '@coherence-design-system/controls';
 import { classNamesFunction, IProcessedStyleSet } from '@fluentui/react';
 import { useTheme } from '@fluentui/react/lib/Theme';
 
@@ -16,17 +15,9 @@ export const AppBase: React.FunctionComponent<IAppProps> = (props: IAppProps) =>
     theme
   });
 
-  const navProps: ICoherenceNavProps = {
-    appName: 'Group Membership Management',
-    groups: []
-  };
-
   return (
     <div className={classNames.root}>
       <AppHeader />
-      <nav>
-        <CoherenceNav {...navProps} />
-      </nav>
     </div>
   );
 };
