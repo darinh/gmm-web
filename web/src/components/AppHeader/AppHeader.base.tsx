@@ -10,8 +10,8 @@ import {
 import { useTheme } from '@fluentui/react/lib/Theme';
 
 import { IAppHeaderProps, IAppHeaderStyleProps, IAppHeaderStyles } from './AppHeader.types';
-import { fetchUser } from '../../store/user.actions';
-import { useAppSelector } from '../../store/hooks';
+import { fetchUser } from '../../store/user.api';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
 const getClassNames = classNamesFunction<IAppHeaderStyleProps, IAppHeaderStyles>();
 
@@ -24,9 +24,10 @@ export const AppHeaderBase: React.FunctionComponent<IAppHeaderProps> = (props: I
 
   const redirect = window.location.pathname;
   const currentUser = useAppSelector((state) => state.user.currentUser);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    fetchUser();
+    dispatch(fetchUser());
   }, []);
 
   const { titleLinkStyles, commandBarStyles, logoImageStyles } = classNames.subComponentStyles;
