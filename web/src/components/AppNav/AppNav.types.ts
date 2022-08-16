@@ -1,19 +1,16 @@
 import React from 'react';
 import { IStyle, IStyleFunctionOrObject, ITheme } from '@fluentui/react';
 
-export interface IAppStyles {
+export interface IAppNavStyles {
   root: IStyle;
-  body: IStyle;
-  nav: IStyle;
-  content: IStyle;
 }
 
-export interface IAppStyleProps {
+export interface IAppNavStyleProps {
   className?: string;
   theme: ITheme;
 }
 
-export interface IAppProps extends React.AllHTMLAttributes<HTMLDivElement> {
+export interface IAppNavProps extends React.AllHTMLAttributes<HTMLDivElement> {
   /**
    * Optional className to apply to the root of the component.
    */
@@ -22,5 +19,5 @@ export interface IAppProps extends React.AllHTMLAttributes<HTMLDivElement> {
   /**
    * Call to provide customized styling that will layer on top of the variant rules.
    */
-  styles?: IStyleFunctionOrObject<IAppStyleProps, IAppStyles>;
+  styles?: IStyleFunctionOrObject<IAppNavStyleProps, IAppNavStyles>;
 }

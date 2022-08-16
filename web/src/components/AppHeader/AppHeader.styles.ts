@@ -1,61 +1,28 @@
-import { FontWeights, IButtonStyles, IStyle, useTheme } from '@fluentui/react';
+import { FontWeights } from '@fluentui/react';
 import { IAppHeaderStyleProps, IAppHeaderStyles } from './AppHeader.types';
-
-export const getButtonStyles: () => IButtonStyles = () => {
-  const theme = useTheme();
-  const { white, themePrimary, themeDark, themeDarkAlt } = theme.palette;
-  return {
-    root: {
-      backgroundColor: themePrimary,
-      ...theme.fonts.medium,
-      color: white
-    },
-    rootHovered: {
-      textDecoration: 'none',
-      color: white,
-      backgroundColor: themeDarkAlt
-    },
-    rootPressed: {
-      textDecoration: 'none',
-      color: white,
-      backgroundColor: themeDark
-    }
-  };
-};
 
 export const getStyles = (props: IAppHeaderStyleProps): IAppHeaderStyles => {
   const { className, theme } = props;
-
-  const linkStyles: IStyle = {
-    color: theme.palette.white,
-    '&:active:hover': {
-      textDecoration: 'none',
-      color: theme.palette.white
-    },
-    '&:hover': {
-      textDecoration: 'none',
-      color: theme.palette.white
-    }
-  };
 
   return {
     root: [
       {
         display: 'grid',
         alignItems: 'center',
-        backgroundColor: theme.palette.themePrimary,
-        fontFamily:
-          'Segoe UI, Segoe UI Web(West European), Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif',
-        height: 48,
+        backgroundColor: theme.semanticColors.bodyBackground,
+        color: theme.semanticColors.bodyText,
+        ...theme.fonts.medium,
+        height: 54,
+        maxWidth: 1636,
+        margin: '0 auto',
         borderBottom: '1px solid transparent',
         boxSizing: 'border-box'
       },
       className
     ],
     titleContainer: {
+      height: 54,
       ...theme.fonts.mediumPlus,
-      paddingLeft: 16,
-      paddingRight: 12,
       alignSelf: 'center',
       overflow: 'hidden',
       display: 'flex',
@@ -63,36 +30,65 @@ export const getStyles = (props: IAppHeaderStyleProps): IAppHeaderStyles => {
       gridColumn: '1 / 3'
     },
     headerItemsContainer: {
-      height: 48,
       overflow: 'hidden',
       gridColumn: '3 / 3',
       display: 'flex',
       justifyContent: 'flex-end'
     },
+    logo: {
+      height: 54,
+      padding: '16px 6px 16px 0',
+      width: 125
+    },
+    withDivider: {
+      position: 'relative',
+      '::before': {
+        borderLeft: `2px solid #000`,
+        height: 24,
+        content: '""',
+        paddingLeft: 24,
+        marginLeft: 7,
+        position: 'absolute',
+        left: 0
+      }
+    },
     subComponentStyles: {
+      logoImageStyles: {
+        image: {
+          margin: '16px 6 16px 0',
+          maxWidth: 'none',
+          width: 108
+        }
+      },
       titleLinkStyles: {
         root: {
-          ...theme.fonts.mediumPlus,
+          height: 54,
+          ...theme.fonts.large,
           fontWeight: FontWeights.semibold,
-          ...linkStyles
+          color: theme.palette.neutralSecondary,
+          marginLeft: 32,
+          padding: '16px 10px',
+          '&:active:hover': {
+            textDecoration: 'none',
+            color: theme.palette.neutralSecondary
+          },
+          '&:hover': {
+            textDecoration: 'none',
+            color: theme.palette.neutralSecondary
+          },
+          '&:focus': {
+            border: 'none',
+            textDecoration: 'none',
+            color: theme.palette.neutralSecondary,
+            outline: 0
+          },
+          
         }
       },
       commandBarStyles: {
         root: {
-          backgroundColor: theme.palette.themePrimary,
-          height: 48,
-          ...theme.fonts.medium,
-          ...linkStyles
-        },
-        primarySet: {
-          backgroundColor: theme.palette.themePrimary,
-          ...theme.fonts.medium,
-          ...linkStyles
-        },
-        secondarySet: {
-          backgroundColor: theme.palette.themePrimary,
-          ...theme.fonts.medium,
-          ...linkStyles
+          height: 54,
+          ...theme.fonts.medium
         }
       }
     }
