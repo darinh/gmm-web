@@ -1,16 +1,16 @@
 import React from 'react';
 import { IStyle, IStyleFunctionOrObject, ITheme } from '@fluentui/react';
 
-export interface IAppBreadcrumbStyles {
+export interface IAppContentStyles {
   root: IStyle;
 }
 
-export interface IAppBreadcrumbStyleProps {
+export interface IAppContentStyleProps {
   className?: string;
   theme: ITheme;
 }
 
-export interface IAppBreadcrumbProps extends React.AllHTMLAttributes<HTMLDivElement> {
+export interface IAppContentProps extends React.AllHTMLAttributes<HTMLDivElement> {
   /**
    * Optional className to apply to the root of the component.
    */
@@ -19,5 +19,5 @@ export interface IAppBreadcrumbProps extends React.AllHTMLAttributes<HTMLDivElem
   /**
    * Call to provide customized styling that will layer on top of the variant rules.
    */
-  styles?: IStyleFunctionOrObject<IAppBreadcrumbStyleProps, IAppBreadcrumbStyles>;
+  styles?: IStyleFunctionOrObject<IAppContentStyleProps, IAppContentStyles>;
 }

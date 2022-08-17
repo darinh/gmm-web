@@ -3,7 +3,6 @@ import {
   classNamesFunction,
   INavLink,
   INavLinkGroup,
-  INavStyles,
   IProcessedStyleSet,
   Nav,
   Sticky,
