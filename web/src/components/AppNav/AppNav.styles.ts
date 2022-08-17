@@ -13,6 +13,37 @@ export const getStyles = (props: IAppNavStyleProps): IAppNavStyles => {
         padding: '32px 32px 0 0'
       },
       className
-    ]
+    ],
+    subComponentStyles: {
+      navStyles: {
+        root: {
+          boxSizing: 'border-box',
+          overflowY: 'auto',
+        },
+        chevronIcon: {
+          height: 32,
+          lineHeight: 32
+        },
+        chevronButton: {
+          margin: 0, // remove extra margin between items
+          ...theme.fonts.medium,
+          height: 32,
+          lineHeight: 32,
+          borderBottom: 0 // remove border ungroup group title
+        },
+        groupContent: {
+          // group around links (all of hte links?)
+          margin: 0, // remove space between groups
+        },
+        link: {
+          ...theme.fonts.medium, // set link properties
+          height: 32,
+          lineHeight: 32,
+          '&:hover': {
+            color: theme.semanticColors.bodyText
+          }
+        }
+      }
+    }
   };
 };

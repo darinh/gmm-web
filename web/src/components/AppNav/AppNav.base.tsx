@@ -26,15 +26,6 @@ export const AppNavBase: React.FunctionComponent<IAppNavProps> = (props: IAppNav
   const handleLinkClick = (_?: React.MouseEvent<HTMLElement>, item?: INavLink) => {
     if (item?.url) window.location.href = item.url;
   };
-  const navStyles: Partial<INavStyles> = {
-    root: {
-      width: 208,
-      height: 350,
-      boxSizing: 'border-box',
-      border: '1px solid #eee',
-      overflowY: 'auto'
-    }
-  };
 
   const navLinkGroups: INavLinkGroup[] = [
     {
@@ -48,7 +39,6 @@ export const AppNavBase: React.FunctionComponent<IAppNavProps> = (props: IAppNav
     },
     {
       name: 'Groups',
-      groupData: {},
       links: [
         {
           name: 'Groups I own',
@@ -62,7 +52,7 @@ export const AppNavBase: React.FunctionComponent<IAppNavProps> = (props: IAppNav
     <Sticky stickyPosition={StickyPositionType.Header}>
       <div className={classNames.root}>
         <Nav
-          styles={navStyles}
+          styles={classNames.subComponentStyles.navStyles}
           onLinkClick={handleLinkClick}
           ariaLabel="Nav basic example"
           groups={navLinkGroups}

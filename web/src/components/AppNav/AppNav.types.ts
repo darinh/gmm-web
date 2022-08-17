@@ -1,8 +1,11 @@
 import React from 'react';
-import { IStyle, IStyleFunctionOrObject, ITheme } from '@fluentui/react';
+import { INavStyles, IStyle, IStyleFunctionOrObject, ITheme } from '@fluentui/react';
 
 export interface IAppNavStyles {
   root: IStyle;
+  subComponentStyles: {
+    navStyles: Partial<INavStyles>
+  }
 }
 
 export interface IAppNavStyleProps {
