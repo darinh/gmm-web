@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider } from '@fluentui/react';
+import { initializeIcons, ThemeProvider } from '@fluentui/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import { App } from './App';
 import './index.css';
 import { store } from './store';
+
+initializeIcons(undefined, { disableWarnings: true });
 
 ReactDOM.render(
   <ThemeProvider>

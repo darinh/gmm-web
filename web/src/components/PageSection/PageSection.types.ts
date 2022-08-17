@@ -1,17 +1,16 @@
-import React from 'react';
 import { IStyle, IStyleFunctionOrObject, ITheme } from '@fluentui/react';
+import { IReactProps } from '@fluentui/react/lib/common/React.types';
 
-export interface IPageHeaderStyles {
+export interface IPageSectionStyles {
   root: IStyle;
-  title: IStyle;
 }
 
-export interface IPageHeaderStyleProps {
+export interface IPageSectionStyleProps {
   className?: string;
   theme: ITheme;
 }
 
-export interface IPageHeaderProps extends React.AllHTMLAttributes<HTMLDivElement> {
+export interface IPageSectionProps extends IReactProps<HTMLDivElement> {
   /**
    * Optional className to apply to the root of the component.
    */
@@ -20,8 +19,5 @@ export interface IPageHeaderProps extends React.AllHTMLAttributes<HTMLDivElement
   /**
    * Call to provide customized styling that will layer on top of the variant rules.
    */
-  styles?: IStyleFunctionOrObject<IPageHeaderStyleProps, IPageHeaderStyles>;
-
-  /** Page title */
-  title: string;
+  styles?: IStyleFunctionOrObject<IPageSectionStyleProps, IPageSectionStyles>;
 }

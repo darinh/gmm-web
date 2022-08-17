@@ -6,16 +6,11 @@ export const getStyles = (props: IAppNavStyleProps): IAppNavStyles => {
   return {
     root: [
       {
-        display: 'grid',
-        alignItems: 'center',
         backgroundColor: theme.semanticColors.bodyBackground,
+        boxSizing: 'border-box',
         color: theme.semanticColors.bodyText,
-        ...theme.fonts.medium,
-        height: 54,
-        maxWidth: 1636,
-        margin: '0 auto',
-        borderBottom: '1px solid transparent',
-        boxSizing: 'border-box'
+        width: 324,
+        padding: '32px 32px 0 0'
       },
       className
     ]

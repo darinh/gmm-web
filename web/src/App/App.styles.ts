@@ -12,7 +12,6 @@ export const getStyles = (props: IAppStyleProps): IAppStyles => {
 
   return {
     root: [{
-      padding: '0 32px'
     }, classNames.root, className],
     body: {
       display: 'flex',
@@ -20,6 +19,8 @@ export const getStyles = (props: IAppStyleProps): IAppStyles => {
       flexGrow: 1,
       justifyContent: 'center',
       maxWidth: 1722,
+      boxSizing: 'border-box',
+      padding: '0 32px',
       margin: '0 auto'
     },
     nav: {

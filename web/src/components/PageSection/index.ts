@@ -1,2 +1,2 @@
-export * from './PageHeader';
-export * from './PageHeader.types';
+export * from './PageSection';
+export * from './PageSection.types';
