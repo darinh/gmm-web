@@ -4,8 +4,7 @@ import { useTheme } from '@fluentui/react/lib/Theme';
 import { IAppProps, IAppStyleProps, IAppStyles } from './App.types';
 import { AppHeader } from '../components/AppHeader';
 import { AppNav } from '../components/AppNav';
-import { Route } from 'react-router-dom';
-import { Groups, Home } from '../pages';
+import { Outlet } from 'react-router-dom';
 
 const getClassNames = classNamesFunction<IAppStyleProps, IAppStyles>();
 
@@ -25,8 +24,7 @@ export const AppBase: React.FunctionComponent<IAppProps> = (props: IAppProps) =>
           <AppNav />
         </div>
         <div className={classNames.content}>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/me/groups" component={Groups} />
+          <Outlet />
         </div>
       </div>
     </div>

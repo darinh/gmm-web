@@ -1,2 +1,3 @@
 export * from './Home';
-export * from './me/Groups';
+export * from './GroupsOwned';
+export * from './GroupMemberships';

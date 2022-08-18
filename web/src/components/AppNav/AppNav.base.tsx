@@ -11,9 +11,25 @@ import {
 import { useTheme } from '@fluentui/react/lib/Theme';
 
 import { IAppNavProps, IAppNavStyleProps, IAppNavStyles } from './AppNav.types';
-import {} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const getClassNames = classNamesFunction<IAppNavStyleProps, IAppNavStyles>();
+
+const navLinkGroups: INavLinkGroup[] = [
+  {
+    links: [
+      { name: 'Home', url: '/', icon: 'Home' },
+      {
+        name: 'Groups',
+        url: '',
+        links: [
+          { name: 'Memberships', url: '/groups/memberOf', icon: 'ReminderGroup' },
+          { name: 'Owned', url: '/groups/owned', icon: 'Group' }
+        ]
+      }
+    ]
+  }
+];
 
 export const AppNavBase: React.FunctionComponent<IAppNavProps> = (props: IAppNavProps) => {
   const { className, styles } = props;
@@ -22,30 +38,14 @@ export const AppNavBase: React.FunctionComponent<IAppNavProps> = (props: IAppNav
     theme: useTheme()
   });
 
-  const handleLinkClick = (_?: React.MouseEvent<HTMLElement>, item?: INavLink) => {
-    if (item?.url) window.location.href = item.url;
-  };
+  const navigate = useNavigate();
 
-  const navLinkGroups: INavLinkGroup[] = [
-    {
-      links: [
-        {
-          name: 'Home',
-          url: '/',
-          icon: 'Home'
-        }
-      ]
-    },
-    {
-      name: 'Groups',
-      links: [
-        {
-          name: 'Groups I own',
-          url: '/me/groups'
-        }
-      ]
+  const handleLinkClick = (ev?: React.MouseEvent<HTMLElement>, item?: INavLink) => {
+    if (item && item.url.length > 0) {
+      navigate(item.url);
+      ev?.preventDefault();
     }
-  ];
+  };
 
   return (
     <Sticky stickyPosition={StickyPositionType.Header}>

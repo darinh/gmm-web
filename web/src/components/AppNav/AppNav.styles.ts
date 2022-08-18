@@ -25,15 +25,10 @@ export const getStyles = (props: IAppNavStyleProps): IAppNavStyles => {
           lineHeight: 32
         },
         chevronButton: {
-          margin: 0, // remove extra margin between items
           ...theme.fonts.medium,
           height: 32,
           lineHeight: 32,
           borderBottom: 0 // remove border ungroup group title
-        },
-        groupContent: {
-          // group around links (all of hte links?)
-          margin: 0, // remove space between groups
         },
         link: {
           ...theme.fonts.medium, // set link properties
